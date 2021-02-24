@@ -1,10 +1,12 @@
 import { ProxyState } from "../AppState.js";
-import { pokeApi } from "../Services/AxiosService.js";
+import Pokemon from "../Models/Pokemon.js";
+// import { pokeApi } from "../Services/AxiosService.js";
 import { pokeApiService } from "../Services/PokeApiService.js"
 
 function _draw() {
    let pokemon = ProxyState.nationalDex
    let results = ''
+   // pokemon.forEach(p => results += p.name + '<br/>')
    pokemon.forEach(p => results += p.name + '<br/>')
 
    document.getElementById('app').innerHTML = results

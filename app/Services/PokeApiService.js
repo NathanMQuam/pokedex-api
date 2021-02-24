@@ -11,9 +11,9 @@ class PokeApiService {
 
    async getPokeApiPokemon() {
       try {
-         const res = await pokeApi.get()
-         console.log(res)
-         ProxyState.nationalDex = res.data.results
+         const res = await pokeApi.get('')
+         ProxyState.nationalDex = res.data.results.map(p => p = new Pokemon(p))
+         console.log(ProxyState.nationalDex)
       } catch (error) {
          console.error(error)
       }
