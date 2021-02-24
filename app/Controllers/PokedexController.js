@@ -7,13 +7,19 @@ function _draw() {
    let pokemon = ProxyState.nationalDex
    let results = ''
    // pokemon.forEach(p => results += p.name + '<br/>')
-   pokemon.forEach(p => results += p.name + '<br/>')
+   pokemon.forEach(p => {
+      results += p.ListTemplate
+   })
 
-   document.getElementById('app').innerHTML = results
+   document.getElementById('pokemon-list').innerHTML = results
 }
 
 function _drawActivePokemon() {
-
+   if (ProxyState.activePokemon) {
+      document.getElementById("active-pokemon").innerHTML = ProxyState.activePokemon.ActiveTemplate
+   } else {
+      document.getElementById("active-pokemon").innerHTML = ""
+   }
 }
 
 

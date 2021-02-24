@@ -7,11 +7,15 @@ class AppState extends EventEmitter {
   /** @type {Value[]} */
   values = []
 
-  activePokemon = {}
+/** @type {Pokemon} */
+  activePokemon = null
+  
+  nationalDex=[]
 
   /** @type {Pokemon[]} */
-  nationalDex=[]
   seenPokemon = []
+
+  /** @type {Pokemon[]} */
   caughtPokemon = []
 }
 
